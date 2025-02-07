@@ -21,7 +21,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Planos</title>
 
     <style>
         *{
@@ -123,7 +123,7 @@
             <span onclick="closeModal(1)" class="close">&times;</span>
             <h2 class="text-lg mb-3 font-bold">Lorem Ipsum Basic - R$99,90</h2>
             <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, quod! Iusto dolorem veniam ut asperiores possimus! Similique eum qui odit, quam facere minima dolorem nostrum quos impedit rerum perferendis aut ab cupiditate laudantium, cum fugit numquam suscipit inventore velit officia veritatis minus deserunt necessitatibus. Quas vel labore repudiandae molestiae quidem?</p>
-            <button class="px-8 py-2 bg-green-700 text-white rounded-lg mt-2 "
+            <button class="px-8 py-2 bg-green-700 text-white rounded-lg mt-3"
             onclick="dlAddToCart('A1', 99.90, 'Lorem Ipsum Basic', '1')"
             > 
                 Assine Agora!
@@ -136,7 +136,7 @@
             <span onclick="closeModal(2)" class="close">&times;</span>
             <h2 class="text-lg mb-3 font-bold">Lorem Ipsum Pro - R$ 149,90</h2>
             <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, quod! Iusto dolorem veniam ut asperiores possimus! Similique eum qui odit, quam facere minima dolorem nostrum quos impedit rerum perferendis aut ab cupiditate laudantium, cum fugit numquam suscipit inventore velit officia veritatis minus deserunt necessitatibus. Quas vel labore repudiandae molestiae quidem?</p>
-            <button class="px-8 py-2 bg-green-700 text-white rounded-lg mt-2 "
+            <button class="px-8 py-2 bg-green-700 text-white rounded-lg mt-3"
                 onclick="dlAddToCart('B2', 149.90, 'Lorem Ipsum Pro', '2')"
             > 
                 Assine Agora!
@@ -149,7 +149,7 @@
             <span onclick="closeModal(3)" class="close">&times;</span>
             <h2 class="text-lg mb-3 font-bold">Lorem Ipsum Super Pro - R$199,90</h2>
             <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, quod! Iusto dolorem veniam ut asperiores possimus! Similique eum qui odit, quam facere minima dolorem nostrum quos impedit rerum perferendis aut ab cupiditate laudantium, cum fugit numquam suscipit inventore velit officia veritatis minus deserunt necessitatibus. Quas vel labore repudiandae molestiae quidem?</p>
-            <button class="px-8 py-2 bg-green-700 text-white rounded-lg mt-2 "
+            <button class="px-8 py-2 bg-green-700 text-white rounded-lg mt-3 "
                 onclick="dlAddToCart('C3', 199.90, 'Lorem Ipsum Super Pro', '3')"
             > 
                 Assine Agora!
@@ -199,6 +199,8 @@
             name: name,
             category: category
             });
+            localStorage.setItem('product', pId);
+            window.location.href = './cart.html'
         }
     
         document.getElementById("year").textContent = new Date().getFullYear();

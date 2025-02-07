@@ -21,7 +21,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Success</title>
+    <title>Carrinho</title>
 
     <style>
         *{
@@ -29,6 +29,13 @@
         }
         .bg-stone{
             background-color: #27272A;
+        }
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
         }
     </style> 
 
@@ -54,8 +61,97 @@
         </nav>
     </header>
 
-    <div class="h-screen">
+    <div class="flex justify-center py-12 h-screen">
+        <div class="px-6" style="width: 80%;">
 
+            <!-- sem produtos -->
+            <div id="no-product" class="hidden">
+                <div>
+                    <h2 class="text-3xl mb-4 text-red-900"> <i class="bi bi-cart-x"></i> Seu carrinho está vazio! </h2>
+    
+                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam non culpa, reiciendis deleniti in mollitia quisquam neque dolorem maxime totam eos distinctio eius quam vero tenetur doloremque est sit eum.</p>
+                    <p class="mb-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. At, quam dolorem, deleniti ratione vero rerum est ullam maxime nemo voluptas omnis distinctio explicabo, aspernatur aut cumque esse assumenda earum doloremque nobis cum saepe provident. Minima vero deleniti recusandae alias possimus quaerat incidunt nihil dolorum debitis quibusdam? Incidunt, asperiores! Veritatis, autem.</p>
+        
+                        <a href="./product.html"> <i class="bi bi-arrow-return-left mr-1"></i> 
+                            Voltar a página inicial
+                        </a> 
+                    </button>
+                </div>
+            </div>
+
+            <!-- basic -->
+            <div id="p1" class="hidden">
+                <div class="w-full rounded-2xl p-6 flex" style="background-color: rgb(236, 236, 236);">
+                    <img src="https://img.freepik.com/free-vector/flat-design-lattice-pattern_23-2149641494.jpg" class="mx-auto rounded-2xl" width="350px" height="350px">
+                    <div class="px-4">
+                        <h2 class="font-bold text-3xl"> Lorem Ipsum Basic</h2>
+                        <h3 class="font-semibold text-xl my-2"> R$99,90</h3>
+                        <p class="text-lg"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis alias saepe cum illo harum placeat ad doloribus voluptatum provident facere tempora impedit ea assumenda cumque, consequuntur minus quis. Iste ad vel assumenda labore deleniti debitis similique voluptates quod, placeat eum.</p>                   
+                        <div class="flex gap-2 mt-2">
+                            <button class="w-22 flex px-8 py-2 bg-green-700 text-white rounded-lg mt-2"
+                                onclick="dlPurchase(99.90, 'Lorem Ipsum Basic', '1')"
+                            > 
+                                    Assinar 
+                            </button>
+                            <button class="w-22 flex px-8 py-2 bg-red-700 text-white rounded-lg mt-2"
+                                onclick="dlRemoveItem()"
+                            > 
+                                Remover  
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- pro -->
+            <div id="p2" class="hidden">
+                <div class="w-full rounded-2xl p-6 flex" style="background-color: rgb(236, 236, 236);">
+                    <img src="https://img.freepik.com/free-vector/flat-design-monochromatic-pattern_23-2150735296.jpg" class="mx-auto rounded-2xl" width="350px" height="350px">
+                    <div class="px-4">
+                        <h2 class="font-bold text-3xl"> Lorem Ipsum Pro</h2>
+                        <h3 class="font-semibold text-xl my-2"> R$149,90</h3>
+                        <p class="text-lg"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis alias saepe cum illo harum placeat ad doloribus voluptatum provident facere tempora impedit ea assumenda cumque, consequuntur minus quis. Iste ad vel assumenda labore deleniti debitis similique voluptates quod, placeat eum.</p>                   
+                        <div class="flex gap-2 mt-2">
+                            <button class="w-22 flex px-8 py-2 bg-green-700 text-white rounded-lg mt-2"
+                                onclick="dlPurchase(149.90, 'Lorem Ipsum Pro', '2')"
+                            > 
+                                    Assinar 
+                            </button>
+                            <button class="w-22 flex px-8 py-2 bg-red-700 text-white rounded-lg mt-2"
+                                onclick="dlRemoveItem()"
+                            > 
+                                Remover  
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- super pro -->
+            <div id="p3" class="hidden">
+                <div class="w-full rounded-2xl p-6 flex" style="background-color: rgb(236, 236, 236);">
+                    <img src="https://img.freepik.com/free-vector/flat-design-lattice-pattern_23-2149641497.jpg?semt=ais_hybrid" class="mx-auto rounded-2xl" width="350px" height="350px">
+                    <div class="px-4">
+                        <h2 class="font-bold text-3xl"> Lorem Ipsum Super Pro</h2>
+                        <h3 class="font-semibold text-xl my-2"> R$199,90</h3>
+                        <p class="text-lg"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis alias saepe cum illo harum placeat ad doloribus voluptatum provident facere tempora impedit ea assumenda cumque, consequuntur minus quis. Iste ad vel assumenda labore deleniti debitis similique voluptates quod, placeat eum.</p>                   
+                        <div class="flex gap-2 mt-2">
+                            <button class="w-22 flex px-8 py-2 bg-green-700 text-white rounded-lg mt-2"
+                                onclick="dlPurchase(199.90, 'Lorem Ipsum Super Pro', '3')"
+                            > 
+                                    Assinar 
+                            </button>
+                            <button class="w-22 flex px-8 py-2 bg-red-700 text-white rounded-lg mt-2"
+                                onclick="dlRemoveItem()"
+                            > 
+                                Remover  
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
 
     <footer class="bg-stone pt-4 pb-3 px-12 text-center text-sm text-white">
@@ -63,7 +159,52 @@
     </footer>
 
     <script>
+
+        var product = localStorage.getItem('product');
+
+        const noProductDiv = document.getElementById("no-product");
+        const p1Div = document.getElementById("p1");
+        const p2Div = document.getElementById("p2");
+        const p3Div = document.getElementById("p3");
+
+        if(product == null || product == undefined){
+            noProductDiv.style.display = 'flex'
+        } else if (product == 'A1'){
+            p1Div.style.display = 'flex'
+        } else if (product == 'B2'){
+            p2Div.style.display = 'flex'
+        } else if (product == 'C3'){
+            p3Div.style.display = 'flex'
+        }
+
+        var randomId = Math.floor(Math.random() * 1000000) + 1;
+
+        window.dataLayer = window.dataLayer || [];
+        
+        function dlPurchase(price, name, category) {
+            window.dataLayer.push({
+            event: 'purchase',
+            id: randomId,
+            pId: product,
+            price: price,
+            category: category,
+            name: name
+            });
+            window.location.href = './success.html';
+            localStorage.removeItem('product');
+        }
+
+        function dlRemoveItem(pId){
+            window.dataLayer.push({
+            event: 'remove_item',
+            pId: product,
+            });
+            window.location.href = './index.html';
+            localStorage.removeItem('product');
+        }
+
         document.getElementById("year").textContent = new Date().getFullYear();
+
     </script>
   
 
